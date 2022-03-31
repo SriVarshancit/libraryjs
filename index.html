@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+ <style>
+         
+        body{
+            background:url(pexels-pixabay-256541.jpg);
+        }
+        form input {
+            width: 250px;
+            height: 40px;
+            outline: none;
+            padding: 0 5px;
+        }
+        h1{
+            color: rgb(27, 11, 11);
+        }
+
+        font button {
+            width: 50px;
+            height: 40px;
+            cursor: pointer;
+            border: none;
+        }
+
+        ul {
+            width: 500px;
+            list-style: none;
+        }
+
+        .container {
+            margin-top: 50px;
+        }
+
+        ul li {
+            width: 60%;
+            background: rgb(255, 255, 255);
+            height: 40px;
+            line-height: 40px;
+            display: block;
+            position: relative;
+            margin: 5px 0;
+            border: 1 px solid black;
+            cursor: pointer;
+        }
+
+        ul li span {
+            width: 50px;
+            text-align: center;
+            background: black;
+            right: 0;
+            top: 0;
+            position: absolute;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="./download.jpg" width="150" border="2" align="left">
+    <h2 style="color: rgb(0, 0, 0);" align="center"> LIBRARY MANAGEMENT</h2>
+    <hr>
+
+    <br><br>
+    <center>
+        <table border="3" bgcolor="yellow" width="30%" style="border-radius: 23px;">
+            <tr>
+                <td height="60">
+                    <center><b><a href="#science">Science</a></b></center>
+                </td>
+            </tr>
+            <tr>
+                <td height="60">
+                    <center><b><a href="#religion">Religion</a></b></center>
+                </td>
+            </tr>
+            <tr>
+                <td height="60">
+                    <center><b><a href="history">History</a></b></center>
+                </td>
+            </tr>
+            <tr>
+                <td height="60">
+                    <center><b><a href="https://www.google.com">Writers list</a></b></center>
+                </td>
+            </tr>
+        </table>
+    </center>
+
+
+<center>
+    <h1>Add Books</h1>
+    <form>
+        <input type="text" name="text" id="Books">
+        <button type="submit" class="btn-list">
+            <i class="fa fa-plus" aria-hidden="true"></i>
+        </button>
+    </form>
+
+    <div class="container">
+        <ul></ul>
+    </div>
+</center>
+
+</body>
+ <script>
+     let inputText = document.querySelector("#Books");
+let myButton = document.querySelector('.btn-list');
+let list = document.querySelector('.container ul');
+myButton.addEventListener('click', (e)=> {
+    if (inputText.value != "") {
+        e.preventDefault();
+        let myLi = document.createElement('li');
+        myLi.innerHTML = inputText.value;
+        list.appendChild(myLi);
+        let mySpan = document.createElement('span');
+        mySpan.innerHTML = 'x';
+        myLi.appendChild(mySpan);
+
+    }
+    let close = document.querySelectorAll('span');
+    for (let i = 0; i < close.length; i++) {
+        close[i].addEventListener('click', ()=> {
+            close[i].parentElement.style.opacity = 0;
+        })
+    }
+})
+
+
+ </script>
+
+
+</html>
